@@ -28,7 +28,7 @@ const Login = () => {
         <CardBody>
           <h2 className="text-xl font-bold text-danger-500">Login</h2>
           <p className="mb-4 text-sm">
-            Don't have an account?&nbsp;
+            Dont have an account?&nbsp;
             <Link
               href="/auth/register"
               className="font-semibold text-danger-400"
