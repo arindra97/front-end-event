@@ -16,7 +16,33 @@ const registerSchema = yup.object().shape({
     .required("Please input your email"),
   password: yup
     .string()
-    .min(8, "Minimal 8 Characters")
+    .min(8, "Password must be at least 8 Characters")
+    .test(
+      "at-least-one-uppercase-letter",
+      "Contains at least one uppercase letter",
+      (value) => {
+        if (!value) return false;
+
+        const regex = /^(?=.*[A-Z])/;
+        return regex.test(value);
+      },
+    )
+    .test("at-least-one-number", "Contains at least one number", (value) => {
+      if (!value) return false;
+
+      const regex = /^(?=.*\d)/;
+      return regex.test(value);
+    })
+    .test(
+      "at-least-one-special-character",
+      "Contains at least one special character",
+      (value) => {
+        if (!value) return false;
+
+        const regex = /^(?=.*[!-/:-@\[-`{-~])/;
+        return regex.test(value);
+      },
+    )
     .required("Please input your password"),
   confirmPassword: yup
     .string()
