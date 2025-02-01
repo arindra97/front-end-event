@@ -1,7 +1,7 @@
 import { Button, Card, CardBody, Input } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import useRegister from "../Register/useRegister";
+import useRegister from "../Auth/Register/useRegister";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
