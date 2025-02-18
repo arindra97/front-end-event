@@ -37,7 +37,8 @@ const useLogin = () => {
       callbackUrl,
     });
     if (result?.error && result?.status === 401) {
-      throw new Error("Email or username not match with your password");
+      throw new Error("username not match with your password");
+      // throw new Error("Email or username not match with your password");
     }
   };
 
